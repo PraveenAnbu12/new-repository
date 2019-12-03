@@ -1,0 +1,27 @@
+    public static long tailRecursive(int n){
+        if(n<=0){
+            throw new IllegalArgumentException();
+        }
+        else {
+            return tail(n, 1); //calls tail method
+        }
+    }
+    private static long tail(int n, int factorial){
+        if(n == 1){
+            return factorial;
+        }
+        else{
+            return tail(n-1,factorial*n); //multiplies factorial within method argument
+        }
+    }
+    public static long iterative(int n){
+        if(n<=0){
+            throw new IllegalArgumentException();
+        }
+        int factorial = 1;
+        for(int i = n;i>0;i--){ //loops for every integer 1 through n
+            factorial *= i;
+        }
+        return factorial;
+    }
+}
